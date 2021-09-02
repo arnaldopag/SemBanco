@@ -1,0 +1,61 @@
+﻿@model Cliente;
+@{
+    ViewData["Title"] = "Cadastro Cliente";
+}
+<h1>Cadastro De Clientes</h1>
+<form asp-action="Cadastro" method="POST">
+    <div class="mb-3">
+        <label asp-for="Nome" class="form-label">Nome: </label>
+        <input asp-for="Nome" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label">Email: </label>
+        <input asp-for="Email" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Fone" class="form-label">Fone: </label>
+        <input asp-for="Fone" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Login" class="form-label">Login: </label>
+        <input asp-for="Login" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Senha" class="form-label">Senha: </label>
+        <input asp-for="Senha" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Cpf" class="form-label">Cpf: </label>
+        <input asp-for="Cpf" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Rg" class="form-label">RG: </label>
+        <input asp-for="Rg" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Salario" class="form-label">Salario R$: </label>
+        <input asp-for="Salario" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="DataNascimento" class="form-label">Data Nascimento</label>
+        <input asp-for="DataNascimento" type="date" />
+    </div>
+    <div class="mb-3">
+            <label asp-for="NumeroConta" class="form-label">Numero Conta: </label>
+            <input asp-for="NumeroConta" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Agencia" class="form-label">Agencia: </label>
+            <input asp-for="Agencia" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Saldo" class="form-label">Primeiro Deposito R$: </label>
+            <input asp-for="Saldo" />
+        </div>
+    <div class="mb-3">
+        <input type="Submit" value="Enviar" class="btn btn-outline-primary">
+    </div>
+</form>
+<p>
+    @ViewBag.Mensagem
+</p>

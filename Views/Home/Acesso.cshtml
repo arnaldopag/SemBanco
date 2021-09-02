@@ -1,0 +1,19 @@
+﻿@model List<Cliente>;
+@{
+    ViewData["Title"] = "Acesso";
+}
+<body>
+    @foreach(Cliente cliente in Model)
+    {
+    <h1>Olá,@cliente.Nome </h1>
+    <h3>Dados da conta</h3>
+    <p>Conta:@cliente.NumeroConta </p>
+    <p>Agência: @cliente.Agencia</p>
+    <p>Saldo:R$@cliente.Saldo</p>
+    }
+
+    <div>
+         <button class="btn btn-outline-primary"><a href="./Depositar">Deposito</a></button>
+        <button class="btn btn-outline-primary"><a href="./Sacar"> Saque</a></button>
+    </div>
+</body>
