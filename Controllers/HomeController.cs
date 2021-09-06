@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using sembanco.Models;
+using sembanco.Views.Home;
 
 namespace sembanco.Controllers
 {
@@ -73,9 +74,34 @@ namespace sembanco.Controllers
             return View();
 
         }
+        [HttpPost]
+        public IActionResult Sacar(Cliente cliente,double valorSaque)
+        {
+            var novosaldo= Banco.newCliente.Sacar(cliente,valorSaque);
+            cliente.Saldo = novosaldo;
+            return RedirectToAction("Acesso");
+        }
 
         public IActionResult Depositar()
         {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Depositar(Cliente cliente,double valorDeposito)
+        {
+            var novosaldo= Banco.newCliente.Sacar(cliente,valorDeposito);
+            cliente.Saldo = novosaldo;
+            return RedirectToAction("Acesso");
+        }
+        public IActionResult Contato()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Contato(Contato novoContato)
+        {
+            Banco.newCliente.cadastroContato(novoContato);
+            ViewBag.Mensagem = "Cadastro Realizado";
             return View();
         }
 

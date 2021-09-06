@@ -6,6 +6,7 @@ namespace sembanco.Models
     {
         private static List<Cliente> listaCliente = new List<Cliente>();
         private static List<Candidato> listaCandidatos = new List<Candidato>();
+        public static List<Contato> listaContatos = new List<Contato>();
         public void cadastroCliente(Cliente novoCliente)
         {
             listaCliente.Add(novoCliente);
@@ -32,6 +33,10 @@ namespace sembanco.Models
         public void cadastroCandidato(Candidato trabalhador)
         {
             listaCandidatos.Add(trabalhador);
+        }
+        public void cadastroContato(Contato novoContato)
+        {
+            listaContatos.Add(novoContato);
         }
     }
 }
